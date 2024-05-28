@@ -5,22 +5,7 @@ import WifiIcon from "./WifiIcon";
 import Status from "./Status";
 import { useEffect, useState } from "react";
 import TimeIcon from "./TimeIcon";
-
-export enum EAvailability {
-  "Available",
-  "Early",
-  "Late",
-  "Weekend",
-  "Error"
-}
-
-export type TWeather = {
-  condition: {
-    icon: string,
-    text: string,
-    code: number
-  }
-}
+import { EAvailability, TWeather } from "./types/statusTypes";
 
 export default function Home() {
   const [loading, setLoading] = useState(false);

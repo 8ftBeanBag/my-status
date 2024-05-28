@@ -1,8 +1,8 @@
 import Link from "next/link";
-import { EAvailability, TWeather } from "./page";
 import Image from "next/image";
 import { FaLinkedin } from "react-icons/fa";
 import { FaSquareArrowUpRight } from "react-icons/fa6";
+import { EAvailability } from "./types/statusTypes";
 
 type TStatus = {
     availability: EAvailability
@@ -15,7 +15,7 @@ export default function Status({ availability, wifi }: TStatus) {
             case EAvailability.Early: return <>
                 <Image width={200} height={200} src="/me.png" alt="Picture of me" />
                 <div className="text-5xl font-fancy">Abi&apos;s Status</div>
-                <div>It is too early! Abi hasn't had her coffee.</div>
+                <div>It is too early! Abi hasn not had her coffee.</div>
             </>
             case EAvailability.Late: return <>
                 <Image width={280} height={280} src="/dwight.jpg" alt="Picture of Dwight" className="rounded" />
@@ -30,7 +30,7 @@ export default function Status({ availability, wifi }: TStatus) {
             default: return <>
                 <Image width={200} height={200} src="/oops.png" alt="Error occured" />
                 <div className="text-5xl font-fancy">Abi&apos;s Status</div>
-                <div>There's an <em>error</em>, not sure what happened ☹️</div>
+                <div>There is an <em>error</em>, not sure what happened ☹️</div>
             </>
         }
     }
@@ -40,7 +40,7 @@ export default function Status({ availability, wifi }: TStatus) {
             return <>
                 <Image width={300} height={300} src="/andy.png" alt="Picture of Andy" />
                 <div className="text-5xl font-fancy">Abi&apos;s Status</div>
-                <div className="flex items-center gap-2 mt-2 font-mono">Abi's wifi is down! If you need to reach her, try her phone.</div>
+                <div className="flex items-center gap-2 mt-2 font-mono">Abi&apos;s wifi is down! If you need to reach her, try her phone.</div>
             </>
         else return <>
             <Image width={200} height={200} src="/me.png" alt="Picture of me" />

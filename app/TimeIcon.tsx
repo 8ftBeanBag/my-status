@@ -1,5 +1,4 @@
-import { FaCalendar } from "react-icons/fa";
-import { EAvailability } from "./page";
+import { EAvailability } from "./types/statusTypes";
 
 type TTimeIcon = {
     status: EAvailability
