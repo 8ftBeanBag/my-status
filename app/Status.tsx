@@ -15,17 +15,17 @@ export default function Status({ availability, wifi }: TStatus) {
             case EAvailability.Early: return <>
                 <Image width={200} height={200} src="/me.png" alt="Picture of me" />
                 <div className="text-5xl font-fancy">Abi&apos;s Status</div>
-                <div>It's too early! Abi hasn't had her coffee.</div>
+                <div>It is too early! Abi hasn't had her coffee.</div>
             </>
             case EAvailability.Late: return <>
                 <Image width={280} height={280} src="/dwight.jpg" alt="Picture of Dwight" className="rounded" />
                 <div className="text-5xl font-fancy">Abi&apos;s Status</div>
-                <div>It's too late. Abi is too busy watching The Office to respond.</div>
+                <div>It is too late. Abi is too busy watching The Office to respond.</div>
             </>
             case EAvailability.Weekend: return <>
                 <Image width={280} height={280} src="/friends.gif" alt="Picture of friends" className="rounded" />
                 <div className="text-5xl font-fancy">Abi&apos;s Status</div>
-                <div>It's the weekend!!</div>
+                <div>It is the weekend!!</div>
             </>
             default: return <>
                 <Image width={200} height={200} src="/oops.png" alt="Error occured" />
