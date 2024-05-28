@@ -1,16 +1,18 @@
-var ping = require("net-ping");
-
 export async function GET() {
-  let session = ping.createSession();
-  const target = "fe80::a00:27ff:fe2a:3427";
+  const url = `https://api.uptimerobot.com/v2/getMonitors?api_key=${process.env.UPTIME_KEY}`
+  const headers = {
+    "Content-Type": "application/x-www-form-urlencoded"
+  }
+  const body = {
+    'api_key': process.env.UPTIME_KEY,
+    'format': 'json'
+  }
 
-  session.pingHost(target, function (error: { toString: () => string; }, target: string, sent: number, rcvd: number) {
-    const ms = rcvd - sent;
-    if (error)
-      console.log(target + ": " + error.toString());
-    else
-      console.log(target + ": Alive (ms=" + ms + ")");
-  });
-
-  return Response.json({ pinged: "all good" })
+  const res = await fetch(url, {
+    method: "POST",
+    headers: headers,
+    body: JSON.stringify(body)
+  })
+  const data = await res.json()
+  return Response.json({ status: data.monitors[0].status == 2 })
 }
