@@ -8,7 +8,7 @@ Copy the `.env.example` file and rename it to `.env.local`.
 cp .env.example .env.local
 ```
 
-You will need to sign up at UptimeRobot and create a monitor for router. I had to use my router's DNS IP to get it to ping appropriately. From there, create a read-only API key (or any API key, I'm not checking) and add it to the .env.local file. 
+You will need to sign up at UptimeRobot and create a monitor for your router's IP. I had to use my router's DNS IP to get it to ping appropriately. From there, create a read-only API key (or any API key, I'm not checking) and add it to the .env.local file. 
 
 Sign up for the WeatherAPI as well to use their API.
 
@@ -27,6 +27,7 @@ You should see a pretty sweet status website!
 ## Things to customize
 I didn't make this very configurable so be sure to customize in the code as needed.
 - The name `Abi` is hardcoded on the main page and in the `Status.tsx` component.
+- My LinkedIn and Website are also hardcoded in `Status.tsx`. 
 - The images in the `Status.tsx` component are fun to customize.
 - The dancing font has a very specific vibe. Great opportunity for customization.
 
