@@ -1,5 +1,5 @@
 # My Status
-![Vercel Deploy](https://deploy-badge.vercel.app/vercel/status.abigailhendrick.com)
+![Vercel Deploy](https://deploy-badge.vercel.app/vercel/my-status-five)
 [![License: MIT](https://img.shields.io/badge/License-MIT-purple.svg)](https://opensource.org/licenses/MIT)
 
 This is a little status website I made so I could stop texting my co-workers every time the wifi goes out. I live in a rural area of the USA and the wifi is frequently down for several hours due to storms. This website uses the [UptimeRobot](https://uptimerobot.com/) API and the [WeatherAPI](https://www.weatherapi.com/)
