@@ -3,6 +3,7 @@ import Image from "next/image";
 import { FaLinkedin } from "react-icons/fa";
 import { FaSquareArrowUpRight } from "react-icons/fa6";
 import { EAvailability } from "./types/statusTypes";
+import { Masterpiece, palettes } from "8ftbeanbag-website-components";
 
 type TStatus = {
     availability: EAvailability
@@ -13,7 +14,7 @@ export default function Status({ availability, wifi }: TStatus) {
     const getNonAvailable = () => {
         switch (availability) {
             case EAvailability.Early: return <>
-                <Image width={200} height={200} src="/me.png" alt="Picture of me" />
+                <Image width={200} height={200} src="/coffee.jpg" alt="Picture of coffee" />
                 <div className="text-5xl font-fancy">Abi&apos;s Status</div>
                 <div>It is too early! Abi hasn not had her coffee.</div>
             </>
@@ -43,7 +44,7 @@ export default function Status({ availability, wifi }: TStatus) {
                 <div className="flex items-center gap-2 mt-2 font-mono">Abi&apos;s wifi is down! If you need to reach her, try her phone.</div>
             </>
         else return <>
-            <Image width={200} height={200} src="/me.png" alt="Picture of me" />
+            <Masterpiece background={palettes[2].secondary} shirt={palettes[2].actionSecondary} />
             <div className="text-5xl font-fancy">Abi&apos;s Status</div>
             <div className="flex items-center gap-2 mt-2 font-mono">Abi is available |
                 <Link href="https://www.linkedin.com/in/abigail-hendrick/" target="_blank" rel="noopener noreferrer"><FaLinkedin /></Link>

@@ -31,8 +31,9 @@ export default function Home() {
 
       endTime.setHours(17, 0, 0, 0);
       startTime.setHours(8, 0, 0, 0);
-
-      if ((+startTime - +curTime < 0) && (+endTime - +curTime > 0))
+      if (new Date(curTime).getDay() % 6 === 0)
+        setAvailability(EAvailability.Weekend)
+      else if ((+startTime - +curTime < 0) && (+endTime - +curTime > 0))
         setAvailability(EAvailability.Available)
       else if (+startTime - +curTime > 0)
         setAvailability(EAvailability.Early)
@@ -55,7 +56,7 @@ export default function Home() {
           {weather && <WeatherIcon iconUrl={"https:" + weather.condition.icon} />}
         </div>
       </div>
-      {weather && <Status availability={availability} wifi={wifi} />}
+      {weather && <Status availability={EAvailability.Available} wifi={wifi} />}
     </main>
   );
 }
